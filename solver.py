@@ -1,5 +1,3 @@
-import numpy as np
-
 input_grid = [[5, 0, 0, 0, 8, 0, 0, 4, 9],
               [0, 0, 0, 5, 0, 0, 0, 3, 0],
               [0, 6, 7, 3, 0, 0, 0, 0, 1],
@@ -40,4 +38,4 @@ def solve(grid):
                         grid[y][x] = 0
                 return
     global solution
-    solution = np.matrix(grid)
+    solution = tuple(map(tuple, grid))

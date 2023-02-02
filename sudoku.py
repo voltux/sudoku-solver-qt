@@ -28,7 +28,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     number = 0
                 grid[i][j] = number
 
-        solver.solve(grid)
+        solver.solve_gen(grid)
         for i in range(9):
             for j in range(9):
                 new_item = QTableWidgetItem(str(solver.solution[i, j]))

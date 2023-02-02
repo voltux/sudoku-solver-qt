@@ -24,14 +24,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     number = int(self.tbl_sudoku.item(i, j).text())
                     if number not in range(10):
                         number = 0
-                except:
+                except Exception:
                     number = 0
                 grid[i][j] = number
 
         solver.solve(grid)
         for i in range(9):
             for j in range(9):
-                new_item = QTableWidgetItem(str(solver.solution[i,j]))
+                new_item = QTableWidgetItem(str(solver.solution[i, j]))
                 self.tbl_sudoku.setItem(i, j, new_item)
 
 

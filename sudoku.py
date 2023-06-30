@@ -12,6 +12,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def connectSignalsSlots(self):
         self.btn_solve.clicked.connect(self.solve)
+        self.btn_clear.clicked.connect(self.clear)
+
+    def clear(self):
+        for i in range(9):
+            for j in range(9):
+                self.tbl_sudoku.setItem(i, j, QTableWidgetItem())
 
     def solve(self):
         grid = []

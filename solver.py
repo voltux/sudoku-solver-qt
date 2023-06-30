@@ -8,8 +8,6 @@ input_grid = [[5, 0, 0, 0, 8, 0, 0, 4, 9],
               [0, 3, 0, 0, 0, 2, 0, 0, 0],
               [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-global solution
-
 
 def possible(x, y, n, grid):
     for i in range(9):

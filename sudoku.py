@@ -28,10 +28,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     number = 0
                 grid[i][j] = number
 
-        solver.solve_gen(grid)
+        solution = next(solver.solve_gen(grid))
         for i in range(9):
             for j in range(9):
-                new_item = QTableWidgetItem(str(solver.solution[i, j]))
+                new_item = QTableWidgetItem(str(solution[i][j]))
                 self.tbl_sudoku.setItem(i, j, new_item)
 
 

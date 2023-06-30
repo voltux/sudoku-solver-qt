@@ -42,5 +42,6 @@ def solve_gen(grid):
 
 if __name__ == '__main__':
     sg = solve_gen(input_grid)
-    for sol in sg:
-        print(sg)
+    while 1:
+        print(next(sg))
+        input()

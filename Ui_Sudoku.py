@@ -84,6 +84,9 @@ class Ui_MainWindow(object):
         self.btn_solve = QtWidgets.QPushButton(self.centralwidget)
         self.btn_solve.setObjectName("btn_solve")
         self.verticalLayout.addWidget(self.btn_solve)
+        self.btn_clear = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_clear.setObjectName("btn_clear")
+        self.verticalLayout.addWidget(self.btn_clear)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 930, 30))
@@ -100,6 +103,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sudoku Solver"))
         self.btn_solve.setText(_translate("MainWindow", "Solve"))
+        self.btn_clear.setText(_translate("MainWindow", "Clear"))
 
 
 if __name__ == "__main__":

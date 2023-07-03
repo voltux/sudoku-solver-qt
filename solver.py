@@ -40,6 +40,5 @@ def solve_gen(grid):
 
 if __name__ == '__main__':
     sg = solve_gen(input_grid)
-    while 1:
-        print(next(sg))
-        input()
+    for i in sg:
+        print(i)

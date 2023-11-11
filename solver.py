@@ -1,15 +1,4 @@
-input_grid = [[5, 0, 0, 0, 8, 0, 0, 4, 9],
-              [0, 0, 0, 5, 0, 0, 0, 3, 0],
-              [0, 6, 7, 3, 0, 0, 0, 0, 1],
-              [1, 5, 0, 0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 2, 0, 8, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0, 0, 1, 8],
-              [7, 0, 0, 0, 0, 4, 1, 5, 0],
-              [0, 3, 0, 0, 0, 2, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-
-def possible(x, y, n, grid):
+def possible_entry(x, y, n, grid):
     for i in range(9):
         if grid[y][i] == n:
             return False
@@ -30,15 +19,9 @@ def solve_gen(grid):
         for x in range(9):
             if grid[y][x] == 0:
                 for n in range(1, 10):
-                    if possible(x, y, n, grid):
+                    if possible_entry(x, y, n, grid):
                         grid[y][x] = n
                         yield from solve_gen(grid)
                         grid[y][x] = 0
                 return
     yield tuple(map(tuple, grid))
-
-
-if __name__ == '__main__':
-    sg = solve_gen(input_grid)
-    for i in sg:
-        print(i)

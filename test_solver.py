@@ -13,5 +13,8 @@ input_grid = [[5, 0, 0, 0, 8, 0, 0, 4, 9],
 
 if __name__ == '__main__':
     sg = solver.solve_gen(input_grid)
-    for i in sg:
-        print(i)
+    print('###########################')
+    for solution in sg:
+        for line in solution:
+            print(line)
+        print('###########################')
